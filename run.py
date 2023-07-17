@@ -58,4 +58,21 @@ def return_to_main():
         main()
 
 
+def print_menu():
+    """
+    Display valid user options, exit or start game
+    """
+    menu = input(Fore.GREEN + """
+    *** Welcome to the Speed and Accuracy Typing Test ***
+    
+    Main Menu: Please select the options
+    1. Read the test Instructions
+    2. Tips on improving your typing proficiency
+    3. Sign up
+    4. Start the Test
+    5. Display the Record
+    6. Exit the program\n
+    """)
+    
+    return menu
 
