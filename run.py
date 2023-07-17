@@ -25,4 +25,17 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Speed-and-accuracy-test')
 
+def clear():
+    """
+    Clear the terminal window when new text section is displayed adapoted from https://www.geeksforgeeks.org/clear-screen-python/
+    """
+    # for windows
+    if name == 'nt':
+        system('cls')
+    # for mac and linux
+    else:
+        system('clear')
 
+    print(Fore.BLUE + 
+    "*** Welcome to the Speed and Accuracy Typing Test! ***\n"
+    )
