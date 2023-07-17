@@ -39,3 +39,23 @@ def clear():
     print(Fore.BLUE + 
     "*** Welcome to the Speed and Accuracy Typing Test! ***\n"
     )
+
+
+def return_to_main():
+    """
+    Return the user to the beginning of the program  
+    """
+    print(Fore.GREEN +
+        "\nHit enter when you are ready to return to the main menu. \n"
+    )
+    print(Style.RESET_ALL)
+    user_input= input()
+    if user_input== "":
+        clear()
+        main()
+    else:
+        clear()
+        main()
+
+
+
