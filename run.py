@@ -253,3 +253,22 @@ def generate_random_paragraph_intermediate():
     return test_para
 
 
+def generate_random_paragraph_beginner():
+    """
+    Create a beginner paragraph of random sentences using wonderwords.
+    Adapted from:
+    'https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b'
+    """
+    sent_list = []
+    sent_para = ""
+
+    for i in range(5):
+        sent = RandomSentence()
+        random_sent = sent.sentence()
+        sent_list.append(random_sent)
+        sent_para += random_sent + " "
+
+    test_para = sent_para[:-1]
+
+    return test_para
+
