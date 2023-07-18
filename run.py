@@ -73,6 +73,46 @@ def print_menu():
     5. Display the Record
     6. Exit the program\n
     """)
-    
+
     return menu
+
+
+def display_instructions():
+    """
+    This function displays the necessary instructions needed to make appropraite use of this application
+    """
+    instructions = """
+How this typing test works is that it calculates your speed and your accuracy.
+First we display some sentences to you then prompt you to type along.
+"""
+    print(Fore.BLUE + instructions)
+    print(
+        """* Read and follow prompts closely as you navigate through
+    the program."""
+    )
+    print(
+        """* When you encounter a choice menu, make sure to enter a
+    valid choice."""
+    )
+    print(
+        """* When you are ready to take the test, the program generates
+    a paragraph of short random sentences."""
+    )
+    print(
+        """* When you are ready, type the provided paragraph as quickly
+    and accurately as possible."""
+    )
+    print("* Hit enter when you are done typing.")
+    print(
+        """* Your scores, including accuracy and speed will then be
+    calculated and displayed."""
+    )
+    print(
+        """* You will then be able to choose to save your score or return
+    to the main menu."""
+    )
+    print(Style.RESET_ALL)
+    
+    return_to_main()
+
 
