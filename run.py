@@ -291,3 +291,15 @@ def typed_paragraph():
 
     return results
 
+
+def determine_accuracy(sent_para, typed_para):
+    """
+    Accuracy is determined using SequenceMatcher
+    """
+    sequence_match = SequenceMatcher(a=sent_para, b=typed_para).ratio()
+    result = round(100 * sequence_match, 1)
+
+    return result
+
+
+
