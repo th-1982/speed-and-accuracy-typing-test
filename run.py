@@ -351,6 +351,7 @@ def see_old_scores_and_statistics():
         print(
             '\nTake at least one test and save the score.'
         )
+
         return_to_main()
 
     try:
@@ -423,7 +424,35 @@ def create_user_score_sheet():
             )
             print(Fore.GREEN + "It can now be used to save scores of the test.\n")
             print(Style.RESET_ALL)
+
             return_to_main()
 
+
+def post_test_choice(data):
+    """
+    User gets a choice to save the data or return to the main menu
+    """
+    print(Fore.YELLOW + "\nWhat next?\n")
+    print(Style.RESET_ALL)
+    print("1. Save results.\n")
+    print("2. Return to main menu.\n")
+    print("Please enter your numeric choice:\n")
+    now_what = input()
+    while True:
+        try:
+            if now_what == '1':
+                save_score(data)
+                return_to_main()
+            elif now_what == '2':
+                clear()
+                main()
+            else:
+                raise ValueError
+        except ValueError:
+            print(
+                f"\nInvalid input {now_what}. Please enter 1 or 2.\n"
+            )
+            
+            post_test_choice(data)
 
 
