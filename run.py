@@ -9,7 +9,7 @@ from ast import literal_eval
 import gspread
 from google.oauth2.service_account import Credentials
 
-from wonderwords import RandomSentance
+from wonderwords import RandomSentence
 from colorama import Fore, Style
 import pandas as pd
 
@@ -112,7 +112,23 @@ First we display some sentences to you then prompt you to type along.
     to the main menu."""
     )
     print(Style.RESET_ALL)
-    
+
     return_to_main()
+
+
+def tips():
+    """
+    Print on how to improve typing speed and accuracy
+    """
+    print("How can you improve?\n")
+    print("Familiarize yourself with proper keyboard.\n")
+    print("Learn proper overall positioning of the screen, your finger and your body.\n")
+    print("Keep your eyes on the screen.\n")
+    print("Practice regularly.\n")
+    print("Take online type test on the internet. \n")
+    print("Finally go to the internet to find more detailed advice.\n")
+
+    return_to_main()
+
 
 
