@@ -507,3 +507,44 @@ def save_score(data):
                     )
                     continue
 
+
+def main():
+    """
+    Run all program functions
+    """
+
+    choice = print_menu()
+
+    try:
+        if choice == '1':
+            clear()
+            display_instructions()
+        elif choice == '2':
+            clear()
+            tips()
+        elif choice == '3':
+            clear()
+            create_user_score_sheet()
+        elif choice == '4':
+            test_scores = run_test_display_results()
+            post_test_choice(test_scores)
+        elif choice == '5':
+            clear()
+            see_old_scores_and_statistics()
+        elif choice == '6':
+            print("\nExiting the program.\n")
+            print("Thanks for checking it out!\n")
+            print("Come back soon!\n")
+            quit()
+        else:
+            raise ValueError
+    except ValueError:
+        print(
+            f"\nInvalid input: {choice}")
+        print(
+            "Return to the main menu and enter a number from 1 to 5.\n")
+        return_to_main()
+
+
+main()
+
