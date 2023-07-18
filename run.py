@@ -272,3 +272,22 @@ def generate_random_paragraph_beginner():
 
     return test_para
 
+
+def typed_paragraph():
+    """
+    This function captures the typed paragraph from the user and
+    measures the time taken to type the paragraphy. Adapted from:
+    'https://towardsdatascience.com/
+    speed-typing-test-project-with-python-da1a56987a5b'
+    """
+    start_time = time.time()
+    typed_para = input()
+    end_time = time.time()
+
+    time_taken = end_time - start_time
+    speed = len(typed_para)/(time_taken/60)
+
+    results = [typed_para, speed]
+
+    return results
+
