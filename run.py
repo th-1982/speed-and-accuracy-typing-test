@@ -152,4 +152,66 @@ def choose_levels():
         print("Invalid Input")
 
 
+def _quit():
+    exit()
+
+
+def run_test_display_results():
+    """
+    Run the speed and accuracy typing test and display the results
+    """
+    user_input= input(
+            "Hit enter when you are ready to see the paragraph.\n"
+    )
+    if user_input== "":
+        sentences = choose_levels()
+        print(Fore.GREEN + "*******************************************")
+        print(sentences)
+        print("*******************************************\n")
+    else:
+        sentences = choose_levels()
+        print("*******************************************")
+        print(sentences)
+        print("*******************************************\n")
+    print(Style.RESET_ALL)
+    user_input= input(
+            """Hit enter when you are ready to start typing.
+    Do not hit enter again until you are done typing.\n"""
+    )
+    if user_input== "":
+        print("Start typing now.\n")
+        test_results = typed_paragraph()
+        test_speed_cpm = round(test_results[1])
+        test_speed_wpm = round(test_speed_cpm / 5)
+        test_para = test_results[0]
+    else:
+        print("Start typing now.\n")
+        test_results = typed_paragraph()
+        test_speed_cpm = round(test_results[1])
+        test_speed_wpm = round(test_speed_cpm / 5)
+        test_para = test_results[0]
+
+    test_typing_accuracy = determine_accuracy(sentences, test_para)
+
+    print("\n******** YOUR SCORE REPORT ********\n")
+    print(
+        f"Typing accuracy is {test_typing_accuracy}%.\n"
+    )
+    print(f"Speed is {test_speed_cpm} characters/minute\n")
+    print(f"that is approx. {test_speed_wpm} words/minute\n")
+
+    if test_speed_cpm == 0:
+        print("Your test scores are 0.")
+        print(
+            "You did not complete the test as designed"
+        )
+
+        return_to_main()
+
+    results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy]
+
+    return results 
+
+
+
 
