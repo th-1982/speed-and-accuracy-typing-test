@@ -131,4 +131,25 @@ def tips():
     return_to_main()
 
 
+def choose_levels():
+    """
+    This function prompts the user to choose a level
+    """
+    print(Fore.CYAN + """Select the number for the corresponding level
+1) Beginner
+2) Intermediate
+3) Advanced
+""")
+    print(Style.RESET_ALL)
+    user_input = input()
+    if user_input == '1':
+        return generate_random_paragraph_beginner()
+    elif user_input == '2':
+        return generate_random_paragraph_medium()
+    elif user_input == '3':
+        return generate_random_paragraph_advanced()
+    else:
+        print("Invalid Input")
+
+
 
