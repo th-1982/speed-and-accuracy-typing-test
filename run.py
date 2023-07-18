@@ -213,5 +213,23 @@ def run_test_display_results():
     return results 
 
 
+def generate_random_paragraph_advanced():
+    """
+    Create an advanced paragraph of random sentences using wonderwords.
+    Adapted from:
+    'https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b'
+    """
+    sent_list = []
+    sent_para = ""
+
+    for i in range(15):
+        sent = RandomSentence()
+        random_sent = sent.sentence()
+        sent_list.append(random_sent)
+        sent_para += random_sent + " "
+
+    test_para = sent_para[:-1]
+
+    return test_para
 
 
