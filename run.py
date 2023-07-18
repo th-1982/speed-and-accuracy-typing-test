@@ -452,7 +452,58 @@ def post_test_choice(data):
             print(
                 f"\nInvalid input {now_what}. Please enter 1 or 2.\n"
             )
-            
+
             post_test_choice(data)
 
+
+def save_score(data):
+    """
+    Save score to worksheet that matches the username
+    """
+    while True:
+        try:
+            print(
+                "\nEnter your username to save the score:\n"
+            )
+            usrnm = input().lower()
+            user_scsht = SH.worksheet(usrnm)
+            print(f"\nUpdating '{usrnm}' scoresheet ...\n")
+            user_scsht = SH.worksheet(usrnm)
+            user_scsht.append_row(data)
+            print(Fore.GREEN +
+                f"'{usrnm}' scoresheet updated successfully.\n"
+            )
+            return_to_main()
+        except gspread.exceptions.WorksheetNotFound:
+            while True:
+                print(Fore.RED +
+                    f"\nWorksheet for '{usrnm}' not found\n"
+                )
+                print("Would you like to:\n")
+                print("1. input a different username?\n")
+                print("2. create a worksheet to save your scores?\n")
+                print("3. return to the main menu?\n")
+                print(
+                    "Please enter your numeric choice:\n"
+                )
+                choice = input()
+                if choice == '1':
+                    continue
+                elif choice == '2':
+                    headings = ["speed in cpm", "speed in wpm", "accuracy"]
+                    user_scsht = SH.add_worksheet(title=usrnm, rows=50, cols=5)
+                    user_scsht.append_row(headings)
+                    user_scsht.append_row(data)
+                    print(
+                        f"\nScoresheet '{usrnm}' created and updated.\n"
+                    )
+                    return_to_main()
+                elif choice == '3':
+                    clear()
+                    main()
+                else:
+                    print(
+                        f"\nInvalid input: {choice}. Enter 1, 2, or 3.\n"
+                    )
+                    continue
 
