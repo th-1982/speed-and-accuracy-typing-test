@@ -302,4 +302,128 @@ def determine_accuracy(sent_para, typed_para):
     return result
 
 
+def see_old_scores_and_statistics():
+    """
+    Access google sheet with old scores and display scores and statistics
+    in the terminal window
+    """
+    while True:
+        try:
+            print(
+                Fore.GREEN + "Enter your username to see your scores and statistics:\n"
+            )
+            print(Style.RESET_ALL)
+            usrnm = input().lower()
+            user_scsht = SH.worksheet(usrnm)
+            break
+        except gspread.exceptions.WorksheetNotFound:
+            while True:
+                print(
+                    f"\nWorksheet for '{usrnm}' not found\n"
+                )
+                print("Would you like to:\n")
+                print("1. enter a different username or\n")
+                print("2. return to the main menu?\n")
+                print(
+                    "Please enter your numeric choice:\n"
+                )
+                choice = input()
+                if choice == '1':
+ 
+                    see_old_scores_and_statistics()
+                elif choice == '2':
+
+                    main()
+                else:
+                    print(Fore.RED +
+                        f"\nInvalid input: {choice}. Please enter 1 or 2.")
+                    continue
+
+    print(
+        f"\nThe collective test results for '{usrnm}' are:\n"
+    )
+    dataframe = pd.DataFrame(user_scsht.get_all_records())
+    print(dataframe)
+    if dataframe.empty:
+        print(
+            '\nThere are no data in the scoresheet yet.'
+        )
+        print(
+            '\nTake at least one test and save the score.'
+        )
+        return_to_main()
+
+    try:
+        user_speed_cpm_values = user_scsht.col_values(1)
+        user_speed_wpm_values = user_scsht.col_values(2)
+        user_accuracy_values = user_scsht.col_values(3)
+
+        int_speed_cpm = [literal_eval(i) for i in user_speed_cpm_values[1:]]
+        int_speed_wpm = [literal_eval(i) for i in user_speed_wpm_values[1:]]
+        int_accuracy = [literal_eval(i) for i in user_accuracy_values[1:]]
+
+        avg_speed_cpm = round(mean(int_speed_cpm))
+        avg_speed_wpm = round(mean(int_speed_wpm))
+        avg_accuracy = round(mean(int_accuracy), 1)
+
+        print(f"\nStatistics for '{usrnm}'\n")
+        print(f"Your average speed is {avg_speed_cpm} characters per minute\n")
+        print(f"That is approx. {avg_speed_wpm} words per minute\n")
+        print(f"Your average accuracy is {avg_accuracy}%\n")
+    except SyntaxError:
+        print('\n')
+        print(
+            Fore.RED + "A Syntax Error has occured and statistics can not be computed.\n"
+        )
+        print(Fore.RED + "The data file may be corrupted.\n")
+        print(Style.RESET_ALL)
+
+    return_to_main()
+
+def create_user_score_sheet():
+    """
+    Create a google spread sheet to save scores for a new user
+    """
+    headings = ["speed in cpm", "speed in wpm", "accuracy"]
+    print(Fore.GREEN +
+        "Enter your username for a new score sheet:\n"
+    )
+    print(Style.RESET_ALL)
+    usrnm = input().lower()
+    while True:
+        try:
+            user_scsht = SH.worksheet(usrnm)
+            print(
+                f"\nA sheet with the name '{usrnm}' already exist.\n"
+            )
+            print("Do you you want to:\n")
+            print("1. Choose a differnt username?\n")
+            print(
+                "2. Return to main menu and record data to existing sheet?\n"
+            )
+            print("Enter your numeric choice:\n")
+            choice = input()
+            if choice == '1':
+                clear()
+                create_user_score_sheet()
+            elif choice == '2':
+                clear()
+                main()
+            else:
+                clear()
+                print(
+                    f"Invalid input: {choice}. Please enter 1 or 2"
+                )
+                continue
+        except gspread.exceptions.WorksheetNotFound:
+            user_scsht = SH.add_worksheet(title=usrnm, rows=100, cols=20)
+            user_scsht.append_row(headings)
+            print(Fore.GREEN +
+                f"\nScoresheet for '{usrnm}' has been created.\n"
+            )
+            print(Fore.GREEN + "It can now be used to save scores of the test.\n")
+            print(Style.RESET_ALL)
+            return_to_main()
+
+
 
