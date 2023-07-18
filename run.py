@@ -145,7 +145,7 @@ def choose_levels():
     if user_input == '1':
         return generate_random_paragraph_beginner()
     elif user_input == '2':
-        return generate_random_paragraph_medium()
+        return generate_random_paragraph_intermediate()
     elif user_input == '3':
         return generate_random_paragraph_advanced()
     else:
@@ -314,7 +314,7 @@ def see_old_scores_and_statistics():
             )
             print(Style.RESET_ALL)
             usrnm = input().lower()
-            user_scsht = SH.worksheet(usrnm)
+            user_scsht = SHEET.worksheet(usrnm)
             break
         except gspread.exceptions.WorksheetNotFound:
             while True:
@@ -393,7 +393,7 @@ def create_user_score_sheet():
     usrnm = input().lower()
     while True:
         try:
-            user_scsht = SH.worksheet(usrnm)
+            user_scsht = SHEET.worksheet(usrnm)
             print(
                 f"\nA sheet with the name '{usrnm}' already exist.\n"
             )
@@ -417,7 +417,7 @@ def create_user_score_sheet():
                 )
                 continue
         except gspread.exceptions.WorksheetNotFound:
-            user_scsht = SH.add_worksheet(title=usrnm, rows=100, cols=20)
+            user_scsht = SHEET.add_worksheet(title=usrnm, rows=100, cols=20)
             user_scsht.append_row(headings)
             print(Fore.GREEN +
                 f"\nScoresheet for '{usrnm}' has been created.\n"
@@ -466,9 +466,9 @@ def save_score(data):
                 "\nEnter your username to save the score:\n"
             )
             usrnm = input().lower()
-            user_scsht = SH.worksheet(usrnm)
+            user_scsht = SHEET.worksheet(usrnm)
             print(f"\nUpdating '{usrnm}' scoresheet ...\n")
-            user_scsht = SH.worksheet(usrnm)
+            user_scsht = SHEET.worksheet(usrnm)
             user_scsht.append_row(data)
             print(Fore.GREEN +
                 f"'{usrnm}' scoresheet updated successfully.\n"
@@ -491,7 +491,7 @@ def save_score(data):
                     continue
                 elif choice == '2':
                     headings = ["speed in cpm", "speed in wpm", "accuracy"]
-                    user_scsht = SH.add_worksheet(title=usrnm, rows=50, cols=5)
+                    user_scsht = SHEET.add_worksheet(title=usrnm, rows=50, cols=5)
                     user_scsht.append_row(headings)
                     user_scsht.append_row(data)
                     print(
@@ -535,7 +535,7 @@ def main():
             print("\nExiting the program.\n")
             print("Thanks for checking it out!\n")
             print("Come back soon!\n")
-            quit()
+            exit()
         else:
             raise ValueError
     except ValueError:
