@@ -64,14 +64,16 @@ def print_menu():
     """
     menu = input(Fore.GREEN + """
     *** Welcome to the Speed and Accuracy Typing Test ***
+""" + Style.RESET_ALL + """
     
-    Main Menu: Please select the options
-    1. Read the test Instructions
-    2. Tips on improving your typing proficiency
-    3. Sign up
-    4. Start the Test
-    5. Display the Record
-    6. Exit the program\n
+    Main Menu: Please select the options\n
+    1. Read the test Instructions\n
+    2. Tips on improving your typing proficiency\n
+    3. Sign up\n
+    4. Start the Test\n
+    5. Display the Record\n
+    6. Delete Record from database\n
+    7. Exit the program\n
     """)
 
     return menu
@@ -81,7 +83,7 @@ def display_instructions():
     """
     This function displays the necessary instructions needed to make appropraite use of this application
     """
-   
+    instructions = """ """
     print(Fore.BLUE + instructions)
     print(
         """* Read and follow prompts closely as you navigate through
@@ -148,6 +150,7 @@ def choose_levels():
     else:
         print("Invalid Input")
 
+        return_to_main()
 
 
 def run_test_display_results():
@@ -159,11 +162,13 @@ def run_test_display_results():
     )
     if user_input== "":
         sentences = choose_levels()
+        sentence_length = len(sentences.split('.'))
         print(Fore.GREEN + "*******************************************")
         print(sentences)
         print("*******************************************\n")
     else:
         sentences = choose_levels()
+        sentence_length = len(sentences.split('.'))
         print("*******************************************")
         print(sentences)
         print("*******************************************\n")
@@ -202,9 +207,87 @@ def run_test_display_results():
 
         return_to_main()
 
-    results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy]
+    if sentence_length == 6:
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Beginner"]
+    elif sentence_length == 11:
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Intermediate"]
+    elif sentence_length == 16:
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Advanced"]
+    else:
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, sentence_length]
 
     return results 
+
+
+def delete_score_sheet():
+    """
+    Delete a user score sheet
+    """
+    while True:
+        try:
+            print(Fore.GREEN + 
+                "Enter username for the scoresheet you want to delete:\n" + Style.RESET_ALL
+            )
+            usrnm = input().lower()
+            if usrnm == 'test':
+                print(
+                    f"\nThe scoresheet '{usrnm}' cannot be deleted."
+                )
+                return_to_main()
+            user_scsht = SHEET.worksheet(usrnm)
+            while True:
+                print(
+                    f"\nA sheet with the name '{usrnm}' exist.\n"
+                )
+                print(
+                    "Are you sure want to delete it?\n"
+                )
+                print(
+                    """Type 'yes' if are ready to delete the sheet,
+    type 'no' if you do not want to delete it and
+    return to main menu.\n"""
+                )
+                choice = input()
+                if choice == 'yes':
+                    SHEET.del_worksheet(user_scsht)
+                    print(
+                        f"\nThe sheet '{usrnm}' has been deleted"
+                    )
+                    return_to_main()
+                elif choice == 'no':
+                    clear()
+                    main()
+                else:
+                    clear()
+                    print(Fore.RED + 
+                        f"Invalid input: {choice}. Enter 'yes' or 'no'." + Style.RESET_ALL
+                    )
+                    continue
+        except gspread.exceptions.WorksheetNotFound:
+            while True:
+                print(
+                    f"\nA score sheet named '{usrnm}' does not exist.\n"
+                )
+                print("Do you want to:\n")
+                print("1. Enter another username?\n")
+                print("2. Return to the main menu?\n")
+                print( Fore.GREEN + 
+                    "Enter the number of your choice:\n" +
+                    Style.RESET_ALL
+                )
+                choice = input()
+                if choice == '1':
+                    clear()
+                    delete_score_sheet()
+                elif choice == '2':
+                    clear()
+                    main()
+                else:
+                    clear()
+                    print(Fore.RED + 
+                        f"Invalid input: {choice}. Please enter 1 or 2." + Style.RESET_ALL
+                    )
+                    continue
 
 
 def generate_random_paragraph_advanced():
@@ -379,7 +462,7 @@ def create_user_score_sheet():
     """
     Create a google spread sheet to save scores for a new user
     """
-    headings = ["speed in cpm", "speed in wpm", "accuracy"]
+    headings = ["speed in cpm", "speed in wpm", "accuracy", "level chosen"]
     print(Fore.GREEN +
         "Enter your username for a new score sheet:\n"
     )
@@ -526,6 +609,9 @@ def main():
             clear()
             see_old_scores_and_statistics()
         elif choice == '6':
+            clear()
+            delete_score_sheet()
+        elif choice == '7':
             print("\nExiting the program.\n")
             print("Thanks for checking it out!\n")
             print("Come back soon!\n")
