@@ -81,10 +81,7 @@ def display_instructions():
     """
     This function displays the necessary instructions needed to make appropraite use of this application
     """
-    instructions = """
-How this typing test works is that it calculates your speed and your accuracy.
-First we display some sentences to you then prompt you to type along.
-"""
+   
     print(Fore.BLUE + instructions)
     print(
         """* Read and follow prompts closely as you navigate through
@@ -151,9 +148,6 @@ def choose_levels():
     else:
         print("Invalid Input")
 
-
-def _quit():
-    exit()
 
 
 def run_test_display_results():
