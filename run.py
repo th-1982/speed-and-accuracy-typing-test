@@ -242,7 +242,7 @@ def delete_score_sheet():
                     "Are you sure want to delete it?\n"
                 )
                 print(
-                  f"{Fore.CYAN}{Style.BRIGHT}Type 'yes' if are ready to delete the sheet,\n"
+                  f"{Fore.GREEN}{Style.BRIGHT}Type 'yes' if are ready to delete the sheet,\n"
     f"type 'no' if you do not want to delete it and\n"
     f"return to main menu.\n{Style.RESET_ALL}"
                 )
