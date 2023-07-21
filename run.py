@@ -242,9 +242,9 @@ def delete_score_sheet():
                     "Are you sure want to delete it?\n"
                 )
                 print(
-                   Fore.CYAN + Style.BRIGHT + """Type 'yes' if are ready to delete the sheet,
-    type 'no' if you do not want to delete it and
-    return to main menu.\n""" Style.RESET_ALL
+                  f"{Fore.CYAN}{Style.BRIGHT}Type 'yes' if are ready to delete the sheet,\n"
+    f"type 'no' if you do not want to delete it and\n"
+    f"return to main menu.\n{Style.RESET_ALL}"
                 )
                 choice = input()
                 if choice == 'yes':
@@ -271,8 +271,7 @@ def delete_score_sheet():
                 print("1. Enter another username?\n")
                 print("2. Return to the main menu?\n")
                 print( Fore.GREEN + Style.BRIGHT +
-                    "Enter the number of your choice:\n" +
-                    Style.RESET_ALL
+                    "Enter the number of your choice:\n" + Style.RESET_ALL              
                 )
                 choice = input()
                 if choice == '1':
@@ -614,7 +613,7 @@ def main():
         else:
             raise ValueError
     except ValueError:
-        print(Fore.RED
+        print(Fore.RED + Style.BRIGHT +
             f"\nInvalid input: {choice}")
         print(
             "Return to the main menu and enter a number from 1 to 7.\n")
