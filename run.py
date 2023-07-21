@@ -1,4 +1,4 @@
-# These Python codes were developed from the portfolio-project- 3 and the Love Sandwiches walkthrough project. 
+# These Python codes were taken and developed from the portfolio-project- 3 and the Love Sandwiches walkthrough project. 
 """This program runs a speed and accuracy typing test."""
 
 import time
