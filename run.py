@@ -434,7 +434,7 @@ def create_user_score_sheet():
             print("Do you want to:\n")
             print("1. Choose a differnt username?\n")
             print("2. Return to main menu and record data to existing sheet?\n")
-            print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" Style.RESET_ALL)
+            print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" + Style.RESET_ALL)
             choice = input()
             if choice == '1':
                 clear()
