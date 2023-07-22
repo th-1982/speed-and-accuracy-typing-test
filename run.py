@@ -116,9 +116,9 @@ def display_instructions():
 
 def tips():
     """
-    Print on how to improve typing speed and accuracy
+    Print on how to improve speed and accuracy typing test
     """
-    print(Fore.MAGENTA + Style.BRIGHT + "How can you improve?\n")
+    print(Fore.MAGENTA + Style.BRIGHT + "How can you improve in speed and accuracy typing test?\n")
     print(Style.RESET_ALL)
     print(Fore.WHITE + "Familiarize yourself with proper keyboard.\n")
     print("Learn proper overall positioning of the screen, your finger and your body.\n")
@@ -142,11 +142,11 @@ def choose_levels():
     print(Style.RESET_ALL)
     user_input = input()
     if user_input == '1':
-        return generate_random_paragraph_beginner()
+        return generate_random_paragraph(5)
     elif user_input == '2':
-        return generate_random_paragraph_intermediate()
+        return generate_random_paragraph(10)
     elif user_input == '3':
-        return generate_random_paragraph_advanced()
+        return generate_random_paragraph(15)
     else:
         print("Invalid Input")
 
@@ -242,7 +242,7 @@ def delete_score_sheet():
                     "Are you sure want to delete it?\n"
                 )
                 print(
-                  f"{Fore.GREEN}{Style.BRIGHT}Type 'yes' if are ready to delete the sheet,\n"
+                  f"{Fore.GREEN}{Style.BRIGHT}Type 'yes' if you are ready to delete the sheet,\n"
     f"type 'no' if you do not want to delete it and\n"
     f"return to main menu.\n{Style.RESET_ALL}"
                 )
@@ -282,62 +282,22 @@ def delete_score_sheet():
                     main()
                 else:
                     clear()
-                    print(Fore.RED +
+                    print(Fore.RED + Style.BRIGHT +
                         f"Invalid input: {choice}. Please enter 1 or 2." + Style.RESET_ALL
                     )
                     continue
 
 
-def generate_random_paragraph_advanced():
+def generate_random_paragraph(n):
     """
-    Create an advanced paragraph of random sentences using wonderwords.
+    Create a paragraph of random sentences using wonderwords.
     Adapted from:
     'https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b'
     """
     sent_list = []
     sent_para = ""
 
-    for i in range(15):
-        sent = RandomSentence()
-        random_sent = sent.sentence()
-        sent_list.append(random_sent)
-        sent_para += random_sent + " "
-
-    test_para = sent_para[:-1]
-
-    return test_para
-
-
-def generate_random_paragraph_intermediate():
-    """
-    Create a intermediate paragraph of random sentences using wonderwords.
-    Adapted from:
-    'https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b'
-    """
-    sent_list = []
-    sent_para = ""
-
-    for i in range(10):
-        sent = RandomSentence()
-        random_sent = sent.sentence()
-        sent_list.append(random_sent)
-        sent_para += random_sent + " "
-
-    test_para = sent_para[:-1]
-
-    return test_para
-
-
-def generate_random_paragraph_beginner():
-    """
-    Create a beginner paragraph of random sentences using wonderwords.
-    Adapted from:
-    'https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b'
-    """
-    sent_list = []
-    sent_para = ""
-
-    for i in range(5):
+    for i in range(n):
         sent = RandomSentence()
         random_sent = sent.sentence()
         sent_list.append(random_sent)
@@ -385,7 +345,7 @@ def see_old_scores_and_statistics():
     while True:
         try:
             print(
-                Fore.GREEN + "Enter your username to see your scores and statistics:\n"
+                Fore.GREEN + Style.BRIGHT + "Enter your username to see your scores and statistics:\n"
             )
             print(Style.RESET_ALL)
             usrnm = input().lower()
@@ -393,14 +353,14 @@ def see_old_scores_and_statistics():
             break
         except gspread.exceptions.WorksheetNotFound:
             while True:
-                print(
-                    f"\nWorksheet for '{usrnm}' not found\n"
+                print(Fore.RED + Style.BRIGHT +
+                    f"\nWorksheet for '{usrnm}' not found\n" + Style.RESET_ALL
                 )
                 print("Would you like to:\n")
                 print("1. enter a different username or\n")
                 print("2. return to the main menu?\n")
-                print(
-                    "Please enter your numeric choice:\n"
+                print(Fore.GREEN + Style.BRIGHT +
+                    "Please enter your numeric choice:\n" + Style.RESET_ALL
                 )
                 choice = input()
                 if choice == '1':
@@ -410,7 +370,7 @@ def see_old_scores_and_statistics():
 
                     main()
                 else:
-                    print(Fore.RED +
+                    print(Fore.RED + Style.BRIGHT +
                         f"\nInvalid input: {choice}. Please enter 1 or 2.")
                     continue
 
@@ -449,9 +409,9 @@ def see_old_scores_and_statistics():
     except SyntaxError:
         print('\n')
         print(
-            Fore.RED + "A Syntax Error has occured and statistics can not be computed.\n"
+            Fore.RED + Style.BRIGHT + "A Syntax Error has occured and statistics can not be computed.\n"
         )
-        print(Fore.RED + "The data file may be corrupted.\n")
+        print(Fore.RED + Style.BRIGHT + "The data file may be corrupted.\n")
         print(Style.RESET_ALL)
 
     return_to_main()
@@ -471,10 +431,10 @@ def create_user_score_sheet():
             print(
                 f"\nA sheet with the name '{usrnm}' already exist.\n"
             )
-            print("Do you you want to:\n")
+            print("Do you want to:\n")
             print("1. Choose a differnt username?\n")
             print("2. Return to main menu and record data to existing sheet?\n")
-            print("Enter your numeric choice:\n")
+            print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" Style.RESET_ALL)
             choice = input()
             if choice == '1':
                 clear()
@@ -506,7 +466,7 @@ def post_test_choice(data):
     print(Fore.YELLOW + Style.BRIGHT + "\nWhat next?\n" + Style.RESET_ALL)
     print("1. Save results.\n")
     print("2. Return to main menu.\n")
-    print("Please enter your numeric choice:\n")
+    print(Fore.GREEN + Style.BRIGHT + "Please enter your numeric choice:\n" + Style.RESET_ALL)
     now_what = input()
     while True:
         try:
@@ -519,8 +479,8 @@ def post_test_choice(data):
             else:
                 raise ValueError
         except ValueError:
-            print(
-                f"\nInvalid input {now_what}. Please enter 1 or 2.\n"
+            print(Fore.RED + Style.BRIGHT +
+                f"\nInvalid input {now_what}. Please enter 1 or 2.\n" + Style.RESET_ALL
             )
 
             post_test_choice(data)
@@ -532,8 +492,8 @@ def save_score(data):
     """
     while True:
         try:
-            print(
-                "\nEnter your username to save the score:\n"
+            print(Fore.GREEN + Style.BRIGHT +
+                "\nEnter your username to save the score:\n" + Style.RESET_ALL
             )
             usrnm = input().lower()
             user_scsht = SHEET.worksheet(usrnm)
@@ -546,15 +506,15 @@ def save_score(data):
             return_to_main()
         except gspread.exceptions.WorksheetNotFound:
             while True:
-                print(Fore.RED +
+                print(Fore.RED + Style.BRIGHT +
                     f"\nWorksheet for '{usrnm}' not found\n" + Style.RESET_ALL
                 )
                 print("Would you like to:\n")
                 print("1. input a different username?\n")
                 print("2. create a worksheet to save your scores?\n")
                 print("3. return to the main menu?\n")
-                print(
-                    "Please enter your numeric choice:\n"
+                print(Fore.GREEN + Style.BRIGHT +
+                    "Please enter your numeric choice:\n" + Style.RESET_ALL
                 )
                 choice = input()
                 if choice == '1':
@@ -572,8 +532,8 @@ def save_score(data):
                     clear()
                     main()
                 else:
-                    print(
-                        f"\nInvalid input: {choice}. Enter 1, 2, or 3.\n"
+                    print(Fore.RED + Style.BRIGHT +
+                        f"\nInvalid input: {choice}. Enter 1, 2, or 3.\n" + Style.RESET_ALL
                     )
                     continue
 
