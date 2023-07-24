@@ -152,3 +152,5 @@ The site's structure consists of a one-page website display containing a termina
 
 The following flow chart was created using LucidChart to illustrate the approximate flow of the program and the choices the user can make.
 
+![Flowchart](docs/testing.md/Flowcharts.jpeg)
+
