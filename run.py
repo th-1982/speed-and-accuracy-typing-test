@@ -83,6 +83,7 @@ def display_instructions():
     """
     This function displays the necessary instructions needed to make appropraite use of this application
     """
+    print(Fore.BLUE + Style.BRIGHT + "Instructions:\n" + Style.RESET_ALL)
     print(Fore.BLUE + Style.BRIGHT)
     print(
         """* Read and follow prompts closely as you navigate through

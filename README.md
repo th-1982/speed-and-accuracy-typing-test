@@ -102,3 +102,37 @@ The Speed and Accuracy Typing Test is a program designed to allow users to test 
 * Scores are to be saved and accessible for future reference. 
 * Error handling and immediate feedback on results.
 
+#### User Stories
+
+##### First-time User
+As a first-time user, I want to ...
+1. ... read test instructions.
+2. ... quickly and intuitively move through the test
+3. ... know Tips to improve my score and my typing skills.
+4. ... sign up with a unique username to save my score.
+5. ... select a difficulty level for the typing test.
+6. ... see a random paragraph to type accurately and quickly.
+7. ... understand how my score fits in with standard averages.
+8. ... be able to type the paragraph and receive the test results
+9. ... save my results for future reference.
+
+
+##### Returning Users
+As a returning user, I want to ...
+1. ... log in using my existing username to access my saved test scores.
+2. ... see and access my previous results.
+3. ... delete a prior scoresheet if needed.
+4. ... take another typing test and save the new test scores.
+5. ... see the progress over time in improving my typing skills.
+
+##### Site Owner
+As the site owner, I want users to ...
+1. ... provide clear instructions and Tips to guide users in using the program.
+2. ... provide multiple difficulty levels to cater to users with varying typing skills.
+3. ... ensure the accuracy of test results and avoid any potential bugs.
+4. ... develop an application that is easy and simple to use.
+5. ... handle errors effectively to provide a smooth user experience.
+6. ... encourage users to improve their typing skills, save their scores and return to the program.
+
+
+
