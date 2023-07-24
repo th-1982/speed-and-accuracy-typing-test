@@ -134,5 +134,21 @@ As the site owner, I want users to ...
 5. ... handle errors effectively to provide a smooth user experience.
 6. ... encourage users to improve their typing skills, save their scores and return to the program.
 
+### Scope
 
+#### Initial Stage
+
+At the early stage, the application will include a main menu where the user can choose from a few options to obtain information, such as instructions and information on improving their typing skills. The user can select a difficulty level (beginner, intermediate, Advanced) for the typing test. The users can take a typing test by typing a random paragraph. The user can also opt to signup, create a username, and use a score sheet to record results; they can review old results and delete a previously developed and populated score sheet. The users can save their test scores to a Google sheet spreadsheet with their username. Then the user will be able to run the test and see immediate feedback in the form of a typing speed in characters/minutes and words/minute as well as a percentage accuracy.										
+
+#### Future Additions
+
+Currently, a Python library called 'Wonderworks' creates a short string of sentences for the user to copy into the terminal window. The sentences are, for the most part, nonsensical and serve the purpose of testing the user's ability to type text by copying it from the terminal window. In a future edition of the application, the developer would like to add Leaderboard to display the top scorers or highest typists on a Leaderboard based on their previous test results. Practice Mode will also be added in the future, where users can practice typing without the pressure of being timed. User Settings will also be added to customize the appearance and behavior of the typing test according to their preferences. Finally, I will also like to calculate efficiency in addition to accuracy.
+
+### Structure
+
+The site's structure consists of a one-page website display containing a terminal window. The Speed and Accuracy Typing Test is run in the terminal window. Above the terminal window, the heading 'Speed and Accuracy Typing Test' is displayed, and a button allows the user to restart the program as many times as desired.
+
+### Flowchart/Skeleton
+
+The following flow chart was created using LucidChart to illustrate the approximate flow of the program and the choices the user can make.
 
