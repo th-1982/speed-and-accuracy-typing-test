@@ -154,3 +154,28 @@ The following flow chart was created using LucidChart to illustrate the approxim
 
 ![Flowchart](docs/testing.md/Flowcharts.jpeg)
 
+
+### Surface
+
+The surface has been modified slightly from the provided CI template to add visual appeal to the site. The terminal window is centered in the browser, and a background picture was chosen to fit the application's theme.
+
+#### Color Scheme
+
+The background picture has white and black shades contrasting the background and the terminal window.
+
+The button above the terminal window is a spring green color so that it lifts out from the page and calls for action.
+
+The application uses the Colorama library to add color to the terminal output, making it more visually appealing and user-friendly. The text in the terminal window is colored depending on the type of information displayed or the action called for. Menu options are generally expressed in plain white text. The main welcome message and headers are displayed in Yellow. The blue color is used for showing instructions and tips. Magenta is used for expressing exit messages. Green is used for displaying prompts and user input instructions. Errors messages and invalid input are displayed in red. The colors are defined using the ´Fore´ class from the ´Colorama´ library, combined with the ´Style. BRIGHT´ attribute to make the text more prominent. For example, ´Fore.YELLOW + Style.BRIGHT´ sets the text color to yellow and makes it bright.
+
+#### Font
+
+The font of the heading is Montserrat, which is modern and has a classic look that makes it suitable for headers and logos.
+
+### Features
+
+### Main Menu
+
+* A welcome message is displayed, and the user can choose from a main menu of 8 options on how to proceed.
+
+
+
