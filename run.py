@@ -63,7 +63,7 @@ def print_menu():
     Display valid user options, exit or start game
     """
     print(Fore.YELLOW + Style.BRIGHT + "\n*** Welcome to the Speed and Accuracy Typing Test! ***\n" + Style.RESET_ALL)
-    print(Fore.WHITE + "Main Menu: Please select the options\n" + Style.RESET_ALL)
+    print(Fore.WHITE + "Main Menu:" + Style.RESET_ALL + Fore.GREEN + Style.BRIGHT + "Please select the options\n" + Style.RESET_ALL)
     menu = input(
         """\n
     1. Read the test Instructions.\n
