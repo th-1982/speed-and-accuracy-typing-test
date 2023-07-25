@@ -121,12 +121,12 @@ def tips():
     """
     print(Fore.MAGENTA + Style.BRIGHT + "How can you improve in speed and accuracy typing test?\n")
     print(Style.RESET_ALL)
-    print(Fore.WHITE + "Familiarize yourself with proper keyboard.\n")
-    print("Learn proper overall positioning of the screen, your finger and your body.\n")
-    print("Keep your eyes on the screen.\n")
-    print("Practice regularly.\n")
-    print("Take online type test on the internet. \n")
-    print("Finally go to the internet to find more detailed advice.\n" + Style.RESET_ALL)
+    print(Fore.WHITE + "* Familiarize yourself with proper keyboard.\n")
+    print("* Learn proper overall positioning of the screen, your finger and your body.\n")
+    print("* Keep your eyes on the screen.\n")
+    print("* Practice regularly.\n")
+    print("* Take online type test on the internet. \n")
+    print("* Finally go to the internet to find more detailed advice.\n" + Style.RESET_ALL)
 
     return_to_main()
 
