@@ -70,7 +70,7 @@
 
 ## Introduction
 
-The Speed and Accuracy Typing Test is a program designed to allow users to test their typing skills, measure their typing speed and accuracy, and save their results to a Google Sheets spreadsheet using the Google Sheets API. It also allows the users to access information such as reading test instructions and tips on improving their skills and score, viewing old scores, deleting their score sheet, and exiting the program. The program is designed in Python and is run through a terminal window.
+The Speed and Accuracy Typing Test is a program designed to allow users to test their typing skills, measure their typing speed and typing accuracy, and save their results to a Google Sheets spreadsheet using the Google Sheets API. It also allows the users to access information such as reading test instructions and tips on improving their skills and score, viewing and accessing old scores, deleting their score sheet, and exiting the program. The program is designed in Python and is run through a terminal window.
 
 
 ## Project Goals
@@ -468,8 +468,26 @@ Resources and inspiration came from a few sources:
 
 * The initial idea to develop a speed and accuracy typing test and parts of the code came from [Bharath K](https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b), [Ulrike Riemenschneider
 ](https://github.com/URiem/portfolio-project-3) and [Love Sandwiches walkthrough project](https://love-sandwiches-game-918ce8868871.herokuapp.com). It was subsequently heavily developed and extended. 
-* Ideas for how to adjust the styling of the CI template came from [Iasmina Pal](https://github.com/useriasminna/american_pizza_order_system) and [Ivette McDermot](https://github.com/IvetteMcDermott/PP3-Python).
-* Research on ideas how to compare two string lead the developer to the following page of ideas: [How to Compare Two Strings in Python](https://miguendes.me/python-compare-strings)
+* Ideas for how to adjust the styling of the CI template came from [Ulrike Riemenschneider](https://github.com/URiem/portfolio-project-3), [Iasmina Pal](https://github.com/useriasminna/american_pizza_order_system) and [Ivette McDermot](https://github.com/IvetteMcDermott/PP3-Python).
+* Research on ideas how to compare two string lead the developer to the following page of ideas: [How to Compare Two Strings in Python](https://miguendes.me/python-compare-strings).
+* This README file was also taken and guided by the README file from [Ulrike Riemenschneider](https://github.com/URiem/portfolio-project-3/blob/main/README.md) 
+
+### Typing Resources
+
+General information on speed typing and how to improve were found on the following websites:
+
+* [Das Keyboard Blog](https://www.daskeyboard.com/blog/average-typing-speed-and-words-per-minu)
+* [indeed](https://www.indeed.com/career-advice/career-development/improve-typing-skills)
+* [wikiHow](https://www.wikihow.com/Improve-Typing-Speed)
+* [Typing speed test in Python](https://iq.opengenus.org/typing-speed-test-in-python/)
+* [wikiHow](https://www.wikihow.com/Type-Faster)
+
+### Acknowledgements
+
+I would like to thank:
+* My mentor Gareth McGirr for his help, feedback, advice, guidance and support.
+* The tutors, and slack community for their support.
+* My Family, for their encouragement and support along the way.
 
 
 
