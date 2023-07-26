@@ -142,7 +142,7 @@ At the early stage, the application will include a main menu where the user can 
 
 #### Future Additions
 
-Currently, a Python library called 'Wonderworks' creates a short string of sentences for the user to copy into the terminal window. The sentences are, for the most part, nonsensical and serve the purpose of testing the user's ability to type text by copying it from the terminal window. In a future edition of the application, the developer would like to add Leaderboard to display the top scorers or highest typists on a Leaderboard based on their previous test results. Practice Mode will also be added in the future, where users can practice typing without the pressure of being timed. User Settings will also be added to customize the appearance and behavior of the typing test according to their preferences. Finally, I will also like to calculate efficiency in addition to accuracy.
+Currently, a Python library called 'Wonderwords' creates a short string of sentences for the user to copy into the terminal window. The sentences are, for the most part, nonsensical and serve the purpose of testing the user's ability to type text by copying it from the terminal window. In a future edition of the application, the developer would like to add Leaderboard to display the top scorers or highest typists on a Leaderboard based on their previous test results. Practice Mode will also be added in the future, where users can practice typing without the pressure of being timed. User Settings will also be added to customize the appearance and behavior of the typing test according to their preferences. Finally, I will also like to calculate efficiency in addition to accuracy.
 
 ### Structure
 
@@ -175,55 +175,129 @@ The font of the heading is Montserrat, which is modern and has a classic look th
 
 #### Main Menu
 
-**A welcome message** is displayed, and the user can choose from a main menu of 8 options on how to proceed.
+* **A welcome message** is displayed, and the user can choose from a main menu of 8 options on how to proceed.
 
 ![Main Menu](docs/testing.md/mainmenu.jpg)
 
 #### Information Sections
 
-**Instructions:** Here the user can read and access the instructions for the test.
+* **Instructions:** Here the user can read and access the instructions for the test.
 
 ![Instruction](docs/testing.md/instructions.jpg)
 
-**Tips on how to improve:** Here, the user can get information on enhancing and improving their typing speed and accuracy.
+* **Tips on how to improve:** Here, the user can get information on enhancing and improving their typing speed and accuracy.
 
 ![How to improve](docs/testing.md/howtoimprove.jpg)
 
 #### Sign up and Score Sheet Sections
 
-**Sign up:** Here, the user can create a username, and the program saves their typing test scores and statistic in a Google Sheets document associated with the username.
+* **Sign up:** Here, the user can create a username, and the program saves their typing test scores and statistic in a Google Sheets document associated with the username.
 
 ![Sign up](docs/testing.md/signup.jpg)
 
-**Access past scores:** The user can access and view a previously saved scoresheet by entering their username and seeing individual results and averages. 
+* **Access past scores:** The user can access and view a previously saved scoresheet by entering their username and seeing individual results and averages. 
 
 ![Access Scoresheet](docs/testing.md/accessscoresheettop.jpg)
 
-**Delete a Scoresheet:** The user can enter a username and delete a scoresheet with that name if it exists. 
+* **Delete a Scoresheet:** The user can enter a username and delete a scoresheet with that name if it exists. 
 
 ![Delete a Scoresheet](docs/testing.md/deletescoresheet.jpg)
 
 #### Testing Section
 
-**Select the choose level.** The user will be prompted to press enter, select the number for the corresponding level, and press enter again until they are encouraged to start typing. 
+* **Select the choose level.** The user will be prompted to press enter, select the number for the corresponding level, and press enter again until they are encouraged to start typing. 
 
 ![Select the choose level](docs/testing.md/selectchooselevel.jpg)
 
-**Type and Run the Test:** The user is prompted to type a random paragraph of sentence lengths based on the user's chosen level(beginner, intermediate, or advanced) as quickly and accurately as possible and press enter to complete the test.
+* **Type and Run the Test:** The user is prompted to type a random paragraph of sentence lengths based on the user's chosen level(beginner, intermediate, or advanced) as quickly and accurately as possible and press enter to complete the test.
 
 ![test](docs/testing.md/test.jpg)
 
-**Test and Save Results:** The user can exit the test, save the scores, or test again.
+* **Test and Save Results:** The user can exit the test, save the scores, or test again.
 
 ![End of the test result](docs/testing.md/endofthetestresults.jpg)
 
 #### Exit Section
-**Exit test:** The final choice in the main menu is for the user to exit the program.
+* **Exit test:** The final choice in the main menu is for the user to exit the program.
  
 ![Exit Progarm](docs/testing.md/exitprogram.jpg)
 
 #### Future Additions
 
+At this time, the paragraph of random sentences created using 'wonderwords' is relatively nonsensical. In a future edition of the application, the developer would like to add Leaderboard to display the top scorers or highest typists on a Leaderboard based on their previous test results. Practice Mode will also be added in the future, where users can practice typing without the pressure of being timed. User Settings will also be added to customize the appearance and behavior of the typing test according to their preferences. Finally, I will also like to calculate efficiency in addition to accuracy.
+
+## Technologies Used
+
+### Languages
+* Python
+
+#### Python Libraries
+
+The following libraries are standard in Python and come preinstalled to deal with a variety of contextual issues:
+
+* Time
+* OS
+* Difflib
+* Statistics
+* Ast
+
+The following libraries were specifically installed to facilitate various processes specific to this application:
+
+* Gspread: Facilitates accessing and manipulating a Google spreadsheet to save and manipulate data.
+* Google.oauth2.service_account.Credentials: This library handled Google service account credentials for authentication.
+* Wonderwords: Facilitates the generation of a random paragraph used in the typing test.
+* Colorama: This library was used to add color to the terminal output. It also helps make the program more visually appealing and easier to navigate.
+* Pandas: This library was used for data manipulation and analysis. It displays a data table in the terminal for easier readability.
+
+### Frameworks & Tools
+* Git
+* GitHub
+* Gitpod
+* Heroku
+* Google Spreadsheets
+* Lucidchart
+* CI Python Linter
+* W3C HTML and CSS Validation Service
+* Google Fonts
+* Coolors. co
+* TinyPNG
+* Mockup Generator
+
+### Helpful sites
+
+The following site was helpful while developing the code to help with problem-solving:
+
+* <a href="https://www.w3schools.com/">W3 Schools</a>
+* <a href="https://stackoverflow.com">Stack Overflow</a>
+* <a href="https://geekflare.com/python-remove-last-character/">Geekflare</a>
+* <a href="https://www.geeksforgeeks.org/clear-screen-python/">Geeksforgeeks</a> 
+
+## Testing and Validation
+
+### PEP8 CI Python Linter
+
+* No errors were found when testing the Python code from run.py in the PEP8 CI Python Linter.
+
+![Python Testing]()
+
+### HTML
+
+* No errors or warnings were found during HTML validation using W3C Markup Validation Service.
+
+![HTML Validation](docs/testing.md/htmltesting.jpg)
+
+### CSS
+
+* No errors were found when validating the CSS using the W3C CSS Validation Service.
+ 
+![CSS Validation](docs/testing.md/csstesting.jpg)
+
+### Lighthouse
+
+* Excellent scores for Performance, Accessibility, and Best practices in Lighthouse.
+
+![Lighthouse Testing](docs/testing.md/lighthousetesting.jpg)
+ 
 
  
  
