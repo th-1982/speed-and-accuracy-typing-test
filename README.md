@@ -311,8 +311,8 @@ The following site was helpful while developing the code to help with problem-so
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 7 | Test begins | Works as expected |
-| Test | Follow clear instructions to navigate the test | Test completed step by step | Works as expected |
+| Main Menu | Choose option 4 to start the test | display diffculty levels | Works as expected |
+| Test | Follow clear instructions to navigate the test | Test begins | Works as expected |
 | End of Test | Make a choice how to proceed | Choice executed | Works as expected |
 
 3. ... get easily understandable results.
@@ -321,24 +321,18 @@ The following site was helpful while developing the code to help with problem-so
 |-------------|------------|---------------------|-------------------|
 | End of test | Finish test | Scores are automatically displayed in terms of speed in characters per minute and words per minute as well as accuracy as a percentage | Works as expected |
 
-4. ... understand how my score fits in with standard averages.
+4. ... learn how I can improve my score.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 2 | General information about typing speeds is displayed | Works as expected |
+| Main Menu | Choose option 2 | Information on how to improve the score is displayed | Works as expected |
 
-5. ... learn how I can improve my score.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 3 | Information on how to improve the score is displayed | Works as expected |
-
-6. ... save my results.
+5. ... Display the Record.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 5 | Create a username to save results | Works as expected |
-| End of Test | Save results | Results can be saved to a new or existing score sheet | Works as expected |
+| Main Menu | Choose option 5 | prompt the user for their username | Works as expected |
+| End of Test | Display Result |display all the user Records | Works as expected |
 
 
 **As a returning user, I want to ...**
@@ -346,15 +340,14 @@ The following site was helpful while developing the code to help with problem-so
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 7 | Test begins | Works as expected |
+| Main Menu | Choose option 4 | Test begins | Works as expected |
 | End of test | Save results to existing score sheet | Results are saved to a previously populated score sheet | Works as expected |
-| Main Menu | Choose option 4 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
 
 2. ... access previous results.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 4 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
+| Main Menu | Choose option 5 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
 
 3. ... delete a score sheet.
 
@@ -381,22 +374,16 @@ The following site was helpful while developing the code to help with problem-so
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 3 | Information on how to improve the score is displayed | Works as expected |
+| Main Menu | Choose option 2 | Information on how to improve the score is displayed | Works as expected |
 
-4. ... provide the user with background information on speed typing.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Main Menu | Choose option 2 | General information about typing speeds is displayed | Works as expected |
-
-5. ... allow the user to save their scores and return to retest and improve their scores.
+4. ... allow the user to save their scores and return to return to main menu and improve their scores.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | End of test | Save results to existing or new score sheet | Results are saved to a score sheet | Works as expected |
 | Return to main menu | At the end of test, save results and return to main menu | Main menu is displayed | Works as expected |
-| Main Menu | Choose option 7 | Test begins again | Works as expected |
-| Main Menu | Choose option 4 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
+| Main Menu | Choose option 4 | Test begins again | Works as expected |
+| Main Menu | Choose option 5 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
  
 
  
