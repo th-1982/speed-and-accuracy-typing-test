@@ -173,9 +173,62 @@ The font of the heading is Montserrat, which is modern and has a classic look th
 
 ### Features
 
-### Main Menu
+#### Main Menu
 
-* A welcome message is displayed, and the user can choose from a main menu of 8 options on how to proceed.
+**A welcome message** is displayed, and the user can choose from a main menu of 8 options on how to proceed.
+
+![Main Menu](docs/testing.md/mainmenu.jpg)
+
+#### Information Sections
+
+**Instructions:** Here the user can read and access the instructions for the test.
+
+![Instruction](docs/testing.md/instructions.jpg)
+
+**Tips on how to improve:** Here, the user can get information on enhancing and improving their typing speed and accuracy.
+
+![How to improve](docs/testing.md/howtoimprove.jpg)
+
+#### Sign up and Score Sheet Sections
+
+**Sign up:** Here, the user can create a username, and the program saves their typing test scores and statistic in a Google Sheets document associated with the username.
+
+![Sign up](docs/testing.md/signup.jpg)
+
+**Access past scores:** The user can access and view a previously saved scoresheet by entering their username and seeing individual results and averages. 
+
+![Access Scoresheet](docs/testing.md/accessscoresheettop.jpg)
+
+**Delete a Scoresheet:** The user can enter a username and delete a scoresheet with that name if it exists. 
+
+![Delete a Scoresheet](docs/testing.md/deletescoresheet.jpg)
+
+#### Testing Section
+
+**Select the choose level.** The user will be prompted to press enter, select the number for the corresponding level, and press enter again until they are encouraged to start typing. 
+
+![Select the choose level](docs/testing.md/selectchooselevel.jpg)
+
+**Type and Run the Test:** The user is prompted to type a random paragraph of sentence lengths based on the user's chosen level(beginner, intermediate, or advanced) as quickly and accurately as possible and press enter to complete the test.
+
+![test](docs/testing.md/test.jpg)
+
+**Test and Save Results:** The user can exit the test, save the scores, or test again.
+
+![End of the test result](docs/testing.md/endofthetestresults.jpg)
+
+#### Exit Section
+**Exit test:** The final choice in the main menu is for the user to exit the program.
+ 
+![Exit Progarm](docs/testing.md/exitprogram.jpg)
+
+#### Future Additions
+
+
+ 
+ 
+
+
 
 
 
