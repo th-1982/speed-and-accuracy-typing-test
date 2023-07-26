@@ -1,7 +1,7 @@
 # Speed and Accuracy Typing Test
 (Developer: Theresa Wolff)
 
-![Mockup image]
+![Mockup image](docs/testing.md/mockup.jpg)
 
 [Live webpage]
 
