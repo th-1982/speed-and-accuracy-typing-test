@@ -278,7 +278,7 @@ The following site was helpful while developing the code to help with problem-so
 
 * No errors were found when testing the Python code from run.py in the PEP8 CI Python Linter.
 
-![Python Testing]()
+![Python Testing](docs/testing.md/cipythonlinter.jpg)
 
 ### HTML
 
@@ -384,7 +384,95 @@ The following site was helpful while developing the code to help with problem-so
 | Return to main menu | At the end of test, save results and return to main menu | Main menu is displayed | Works as expected |
 | Main Menu | Choose option 4 | Test begins again | Works as expected |
 | Main Menu | Choose option 5 and input saved scoresheet name | Previous results and averages are displayed | Works as expected | 
- 
+
+### Manual Testing
+
+The flow of the program was tested extensively using valid and invalid input data at every stage and ensuring that the program functions as intended for a smooth user experience. All errors that did occur during this testing phase were fixed. No more errors should occur. 
+
+
+### Outstanding Issues
+
+There are currently no outstanding issues that the developer is aware of.
+
+
+## Bugs & Fixes
+
+1. After the typing test, if the user puts a name not in the worksheet, it throws up an error and crashes the program.
+
+* I fixed this issue by creating an Exception to handle the "WorksheetNotFound" error.
+
+2. When trying to access my Google sheet, it didn't connect, sighting invalid credentials.
+
+* I fixed this error using scope variables from the Love Sandwiches walkthrough project.
+
+3. Incorrect calculation of typing speed.The program miscalculates the typing speed, leading to inaccurate results displayed to the user.
+
+* I Ensure I correctly calculate the typing speed by considering the number of characters typed and the time taken. 
+
+
+## Deployment & Development
+
+The website was deployed on Heroku. The following steps were followed for a complete and functional deployment:
+
+1. The requirements.txt file was populated using the command "pip3 freeze > requirements.txt'
+2. Any text inside the 'input()' function in the run.py file had a 'new line' command (\n) added to work correctly with the Code Institute template.
+3. Once logged into the Heroku dashboard, a new app was created by clicking on the button 'New' and selecting 'Create New App.'
+5. The app was named 'speed-and-accuracy-typing-test,' and the region 'Europe' was selected.
+6. Under 'Setting' in the newly created app, 'Reveal Config Vars' was clicked to set environment variables such as sensitive information.
+7. For the input field labeled 'KEY,' the word 'CREDS' was entered in all capitals.
+8. The entire contents of the projects creds.json file were pasted into the 'VALUE' field.
+9. A second config var was added with the KEY set to 'PORT' and the VALUE set to '8000'.
+10. Each time 'ADD' was clicked to add the config var.
+11. Next, still under the settings tab, Buildpacks were added.
+12. 'Add Buildpack' was clicked, Python was selected, then 'Save Changes.'
+13. Next, nodejs were added, and 'Save Changes' clicked. 
+14. In the list of Buildpacks, Python needs to be listed above nodejs; if not, drag the buildpacks into the correct order.
+15. This concluded the 'Settings' of the project.
+16. Next, the 'Deploy' section was accessed by clicking on the 'Deploy' tab.
+17. In the 'Deploy' section, GitHub was selected, and then the project on GitHub was searched for; it has the name 'portfolio-project-3'. 
+18. The project was then connected to Heroku by clicking 'connect.'
+19. Next, 'Enable Automatic Deploys' was selected so that the app would be updated automatically every time changes are pushed to GitHub.
+20. Then, 'Deploy Branch' was clicked, and the app was built.
+21. The link to the deployed page is: https://speed-and-accuracy-typing-test-1d306fdf70ec.herokuapp.com/
+
+The following steps can fork the website repository:
+
+1. Go to the GitHub repository.
+2. Click on the Fork button in the upper right-hand corner.
+
+The following steps can clone the repository:
+
+1. Go to the GitHub repository.
+2. Locate the Code button above the list of files and click on it.
+3. Select if you prefer to clone using HTTPS, SSH, or Github CLI, and click the copy button to copy the URL to your clipboard.
+4. Open Git Bash.
+5. Change the current working directory to where you want the cloned directory.
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone.
+
+## Google Sheet Access
+
+The following information is for the assessors of this project. A link to the Google sheet that is used to store, retrieve and delete data as part of the Speed Typing Test can be found here:[Google Sheet](https://docs.google.com/spreadsheets/d/1k_ORO0crgzu3ndA8O4BGPD9BNnHFrwbIqGqSsJo34mU/edit#gid=108714422).
+
+Please note that there is a prepopulated worksheet named **'typing_test3'**, which the assessors can use to test the program's functionality. Additional results can be written on this worksheet, but they must be retained. 
+
+## Credits
+
+### Media
+
+* The background image was taken from [pexels](https://www.pexels.com).
+
+### Code
+
+Resources and inspiration came from a few sources:
+
+* The initial idea to develop a speed and accuracy typing test and parts of the code came from [Bharath K](https://towardsdatascience.com/speed-typing-test-project-with-python-da1a56987a5b), [Ulrike Riemenschneider
+](https://github.com/URiem/portfolio-project-3) and [Love Sandwiches walkthrough project](https://love-sandwiches-game-918ce8868871.herokuapp.com). It was subsequently heavily developed and extended. 
+* Ideas for how to adjust the styling of the CI template came from [Iasmina Pal](https://github.com/useriasminna/american_pizza_order_system) and [Ivette McDermot](https://github.com/IvetteMcDermott/PP3-Python).
+* Research on ideas how to compare two string lead the developer to the following page of ideas: [How to Compare Two Strings in Python](https://miguendes.me/python-compare-strings)
+
+
+
 
  
  
