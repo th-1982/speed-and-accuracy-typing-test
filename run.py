@@ -1,4 +1,5 @@
-# These Python codes were taken and developed from the portfolio-project- 3 and the Love Sandwiches walkthrough project. 
+# These Python codes were taken and developed from the
+# portfolio-project- 3 and the Love Sandwiches walkthrough project.
 """This program runs a speed and accuracy typing test."""
 
 import time
@@ -28,7 +29,8 @@ SHEET = GSPREAD_CLIENT.open('Speed-and-accuracy-test')
 
 def clear():
     """
-    Clear the terminal window when new text section is displayed adapoted from https://www.geeksforgeeks.org/clear-screen-python/
+    Clear the terminal window when new text section is displayed adapoted from
+    https://www.geeksforgeeks.org/clear-screen-python/
     """
     # for windows
     if name == 'nt':
@@ -38,19 +40,19 @@ def clear():
         system('clear')
 
     print(Fore.YELLOW + Style.BRIGHT +
-    "*** Welcome to the Speed and Accuracy Typing Test! ***\n" + Style.RESET_ALL
-    )
+          "*** Welcome to the Speed and Accuracy Typing Test! ***\n" +
+          Style.RESET_ALL)
 
 
 def return_to_main():
     """
-    Return the user to the beginning of the program  
+    Return the user to the beginning of the program
     """
     print(Fore.GREEN + Style.BRIGHT +
-        "\nPress enter when you are ready to return to the main menu. \n" + Style.RESET_ALL
-    )
-    user_input= input()
-    if user_input== "":
+          "\nPress enter when you are ready to return to the main menu. \n" +
+          Style.RESET_ALL)
+    user_input = input()
+    if user_input == "":
         clear()
         main()
     else:
@@ -62,8 +64,11 @@ def print_menu():
     """
     Display valid user options, exit or start game
     """
-    print(Fore.YELLOW + Style.BRIGHT + "\n*** Welcome to the Speed and Accuracy Typing Test! ***\n" + Style.RESET_ALL)
-    print(Fore.WHITE + "Main Menu:" + Style.RESET_ALL + Fore.GREEN + Style.BRIGHT + "Please select the options\n" + Style.RESET_ALL)
+    print(Fore.YELLOW + Style.BRIGHT +
+          "\n*** Welcome to the Speed and Accuracy Typing Test! ***\n" +
+          Style.RESET_ALL)
+    print(Fore.WHITE + "Main Menu:" + Style.RESET_ALL + Fore.GREEN +
+          Style.BRIGHT + "Please select the options\n" + Style.RESET_ALL)
     menu = input(
         """\n
     1. Read the test Instructions.\n
@@ -81,7 +86,8 @@ def print_menu():
 
 def display_instructions():
     """
-    This function displays the necessary instructions needed to make appropraite use of this application
+    This function displays the necessary instructions needed to make
+    appropraite use of this application
     """
     print(Fore.BLUE + Style.BRIGHT + "Instructions:\n" + Style.RESET_ALL)
     print(Fore.BLUE + Style.BRIGHT)
@@ -119,14 +125,18 @@ def tips():
     """
     Print on how to improve speed and accuracy typing test
     """
-    print(Fore.MAGENTA + Style.BRIGHT + "How can you improve in speed and accuracy typing test?\n")
+    print(Fore.MAGENTA + Style.BRIGHT + "How can you improve in speed and\
+    accuracy typing test?\n")
     print(Style.RESET_ALL)
-    print(Fore.WHITE + "* Familiarize yourself with proper keyboard.\n")
-    print("* Learn proper overall positioning of the screen, your finger and your body.\n")
+    print(Fore.BLUE + Style.BRIGHT + "* Familiarize yourself with proper\
+    keyboard.\n")
+    print("* Learn proper overall positioning of the screen, your finger and\
+    your body.\n")
     print("* Keep your eyes on the screen.\n")
     print("* Practice regularly.\n")
     print("* Take online type test on the internet. \n")
-    print("* Finally go to the internet to find more detailed advice.\n" + Style.RESET_ALL)
+    print("* Finally go to the internet to find more detailed advice.\n" +
+          Style.RESET_ALL)
 
     return_to_main()
 
@@ -135,7 +145,8 @@ def choose_levels():
     """
     This function prompts the user to choose a level
     """
-    print(Fore.CYAN + Style.BRIGHT + """Select the number for the corresponding level
+    print(Fore.CYAN + Style.BRIGHT + """Select the number for the\
+    corresponding level
 1) Beginner
 2) Intermediate
 3) Advanced
@@ -158,9 +169,10 @@ def run_test_display_results():
     """
     Run the speed and accuracy typing test and display the results
     """
-    user_input= input(Fore.GREEN + Style.BRIGHT +
-            "Press enter when you are ready to see the paragraph.\n" + Style.RESET_ALL)
-    if user_input== "":
+    user_input = input(Fore.GREEN + Style.BRIGHT +
+                       "Press enter when you're ready to see the paragraph.\n"
+                       + Style.RESET_ALL)
+    if user_input == "":
         sentences = choose_levels()
         sentence_length = len(sentences.split('.'))
         print("*******************************************")
@@ -172,12 +184,11 @@ def run_test_display_results():
         print("*******************************************")
         print(sentences)
         print("*******************************************\n")
-    user_input= input(Fore.GREEN + Style.BRIGHT + 
-            """Press enter when you are ready to start typing.
-    Do not Press enter again until you are done typing.\n"""
-    )
+    user_input = input(Fore.GREEN + Style.BRIGHT +
+                       """Press enter when you are ready to start typing.
+    Do not Press enter again until you are done typing.\n""")
     print(Style.RESET_ALL)
-    if user_input== "":
+    if user_input == "":
         print("Start typing now.\n")
         test_results = typed_paragraph()
         test_speed_cpm = round(test_results[1])
@@ -192,7 +203,8 @@ def run_test_display_results():
 
     test_typing_accuracy = determine_accuracy(sentences, test_para)
 
-    print(Fore.YELLOW + Style.BRIGHT + "\n******** YOUR SCORE REPORT ********\n" + Style.RESET_ALL)
+    print(Fore.YELLOW + Style.BRIGHT + "\n******* YOUR SCORE REPORT *******\n"
+          + Style.RESET_ALL)
     print(
         f"Typing accuracy is {test_typing_accuracy}%.\n"
     )
@@ -208,15 +220,19 @@ def run_test_display_results():
         return_to_main()
 
     if sentence_length == 6:
-        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Beginner"]
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy,
+                   "Beginner"]
     elif sentence_length == 11:
-        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Intermediate"]
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy,
+                   "Intermediate"]
     elif sentence_length == 16:
-        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, "Advanced"]
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy,
+                   "Advanced"]
     else:
-        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy, sentence_length]
+        results = [test_speed_cpm, test_speed_wpm, test_typing_accuracy,
+                   sentence_length]
 
-    return results 
+    return results
 
 
 def delete_score_sheet():
@@ -226,8 +242,8 @@ def delete_score_sheet():
     while True:
         try:
             print(Fore.GREEN + Style.BRIGHT +
-                "Enter username for the scoresheet you want to delete:\n" + Style.RESET_ALL
-            )
+                  "Enter username for the scoresheet you want to delete:\n" +
+                  Style.RESET_ALL)
             usrnm = input().lower()
             if usrnm == 'test':
                 print(
@@ -243,9 +259,10 @@ def delete_score_sheet():
                     "Are you sure want to delete it?\n"
                 )
                 print(
-                  f"{Fore.GREEN}{Style.BRIGHT}Type 'yes' if you are ready to delete the sheet,\n"
-    f"type 'no' if you do not want to delete it and\n"
-    f"return to main menu.\n{Style.RESET_ALL}"
+                  f"{Fore.GREEN}{Style.BRIGHT}Type 'yes' if you are ready to\
+                  delete the sheet,\n"
+                  f"type 'no' if you do not want to delete it and\n"
+                  f"return to main menu.\n{Style.RESET_ALL}"
                 )
                 choice = input()
                 if choice == 'yes':
@@ -260,8 +277,8 @@ def delete_score_sheet():
                 else:
                     clear()
                     print(Fore.RED + Style.BRIGHT +
-                        f"Invalid input: {choice}. Enter 'yes' or 'no'." + Style.RESET_ALL
-                    )
+                          f"Invalid input: {choice}. Enter 'yes' or 'no'." +
+                          Style.RESET_ALL)
                     continue
         except gspread.exceptions.WorksheetNotFound:
             while True:
@@ -271,9 +288,8 @@ def delete_score_sheet():
                 print("Do you want to:\n")
                 print("1. Enter another username?\n")
                 print("2. Return to the main menu?\n")
-                print( Fore.GREEN + Style.BRIGHT +
-                    "Enter the number of your choice:\n" + Style.RESET_ALL              
-                )
+                print(Fore.GREEN + Style.BRIGHT +
+                      "Enter the number of your choice:\n" + Style.RESET_ALL)
                 choice = input()
                 if choice == '1':
                     clear()
@@ -284,8 +300,8 @@ def delete_score_sheet():
                 else:
                     clear()
                     print(Fore.RED + Style.BRIGHT +
-                        f"Invalid input: {choice}. Please enter 1 or 2." + Style.RESET_ALL
-                    )
+                          f"Invalid input: {choice}. Please enter 1 or 2." +
+                          Style.RESET_ALL)
                     continue
 
 
@@ -346,8 +362,8 @@ def see_old_scores_and_statistics():
     while True:
         try:
             print(
-                Fore.GREEN + Style.BRIGHT + "Enter your username to see your scores and statistics:\n"
-            )
+                Fore.GREEN + Style.BRIGHT + "Enter your username to see your\
+                scores and statistics:\n")
             print(Style.RESET_ALL)
             usrnm = input().lower()
             user_scsht = SHEET.worksheet(usrnm)
@@ -355,24 +371,23 @@ def see_old_scores_and_statistics():
         except gspread.exceptions.WorksheetNotFound:
             while True:
                 print(Fore.RED + Style.BRIGHT +
-                    f"\nWorksheet for '{usrnm}' not found\n" + Style.RESET_ALL
-                )
+                      f"\nWorksheet for '{usrnm}' not found\n" +
+                      Style.RESET_ALL)
                 print("Would you like to:\n")
                 print("1. enter a different username or\n")
                 print("2. return to the main menu?\n")
                 print(Fore.GREEN + Style.BRIGHT +
-                    "Please enter your numeric choice:\n" + Style.RESET_ALL
-                )
+                      "Please enter your numeric choice:\n" + Style.RESET_ALL
+                      )
                 choice = input()
                 if choice == '1':
- 
                     see_old_scores_and_statistics()
                 elif choice == '2':
 
                     main()
                 else:
                     print(Fore.RED + Style.BRIGHT +
-                        f"\nInvalid input: {choice}. Please enter 1 or 2.")
+                          f"\nInvalid input: {choice}. Please enter 1 or 2.")
                     continue
 
     print(
@@ -410,12 +425,14 @@ def see_old_scores_and_statistics():
     except SyntaxError:
         print('\n')
         print(
-            Fore.RED + Style.BRIGHT + "A Syntax Error has occured and statistics can not be computed.\n"
-        )
+            Fore.RED + Style.BRIGHT + "A Syntax Error has occured and\
+            statistics can not be computed.\n"
+             )
         print(Fore.RED + Style.BRIGHT + "The data file may be corrupted.\n")
         print(Style.RESET_ALL)
 
     return_to_main()
+
 
 def create_user_score_sheet():
     """
@@ -423,8 +440,8 @@ def create_user_score_sheet():
     """
     headings = ["speed in cpm", "speed in wpm", "accuracy", "level chosen"]
     print(Fore.GREEN + Style.BRIGHT +
-        "Enter your username for a new score sheet:\n" + Style.RESET_ALL
-    )
+          "Enter your username for a new score sheet:\n" + Style.RESET_ALL
+          )
     usrnm = input().lower()
     while True:
         try:
@@ -434,8 +451,10 @@ def create_user_score_sheet():
             )
             print("Do you want to:\n")
             print("1. Choose a differnt username?\n")
-            print("2. Return to main menu and record data to existing sheet?\n")
-            print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" + Style.RESET_ALL)
+            print("2. Return to main menu and record data to existing\
+            sheet?\n")
+            print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" +
+                  Style.RESET_ALL)
             choice = input()
             if choice == '1':
                 clear()
@@ -452,8 +471,8 @@ def create_user_score_sheet():
         except gspread.exceptions.WorksheetNotFound:
             user_scsht = SHEET.add_worksheet(title=usrnm, rows=100, cols=20)
             user_scsht.append_row(headings)
-            print( 
-                f"\nScoresheet for '{usrnm}' has been created.\n" 
+            print(
+                f"\nScoresheet for '{usrnm}' has been created.\n"
             )
             print("It can now be used to save scores of the test.\n")
 
@@ -467,7 +486,8 @@ def post_test_choice(data):
     print(Fore.YELLOW + Style.BRIGHT + "\nWhat next?\n" + Style.RESET_ALL)
     print("1. Save results.\n")
     print("2. Return to main menu.\n")
-    print(Fore.GREEN + Style.BRIGHT + "Please enter your numeric choice:\n" + Style.RESET_ALL)
+    print(Fore.GREEN + Style.BRIGHT + "Please enter your numeric choice:\n" +
+          Style.RESET_ALL)
     now_what = input()
     while True:
         try:
@@ -481,8 +501,8 @@ def post_test_choice(data):
                 raise ValueError
         except ValueError:
             print(Fore.RED + Style.BRIGHT +
-                f"\nInvalid input {now_what}. Please enter 1 or 2.\n" + Style.RESET_ALL
-            )
+                  f"\nInvalid input {now_what}. Please enter 1 or 2.\n" +
+                  Style.RESET_ALL)
 
             post_test_choice(data)
 
@@ -494,8 +514,8 @@ def save_score(data):
     while True:
         try:
             print(Fore.GREEN + Style.BRIGHT +
-                "\nEnter your username to save the score:\n" + Style.RESET_ALL
-            )
+                  "\nEnter your username to save the score:\n" +
+                  Style.RESET_ALL)
             usrnm = input().lower()
             user_scsht = SHEET.worksheet(usrnm)
             print(f"\nUpdating '{usrnm}' scoresheet ...\n")
@@ -508,21 +528,22 @@ def save_score(data):
         except gspread.exceptions.WorksheetNotFound:
             while True:
                 print(Fore.RED + Style.BRIGHT +
-                    f"\nWorksheet for '{usrnm}' not found\n" + Style.RESET_ALL
-                )
+                      f"\nWorksheet for '{usrnm}' not found\n" +
+                      Style.RESET_ALL)
                 print("Would you like to:\n")
                 print("1. input a different username?\n")
                 print("2. create a worksheet to save your scores?\n")
                 print("3. return to the main menu?\n")
                 print(Fore.GREEN + Style.BRIGHT +
-                    "Please enter your numeric choice:\n" + Style.RESET_ALL
-                )
+                      "Please enter your numeric choice:\n" + Style.RESET_ALL)
                 choice = input()
                 if choice == '1':
                     continue
                 elif choice == '2':
-                    headings = ["speed in cpm", "speed in wpm", "accuracy", "level chosen"]
-                    user_scsht = SHEET.add_worksheet(title=usrnm, rows=50, cols=5)
+                    headings = ["speed in cpm", "speed in wpm", "accuracy",
+                                "level chosen"]
+                    user_scsht = SHEET.add_worksheet(title=usrnm, rows=50,
+                                                     cols=5)
                     user_scsht.append_row(headings)
                     user_scsht.append_row(data)
                     print(
@@ -534,8 +555,8 @@ def save_score(data):
                     main()
                 else:
                     print(Fore.RED + Style.BRIGHT +
-                        f"\nInvalid input: {choice}. Enter 1, 2, or 3.\n" + Style.RESET_ALL
-                    )
+                          f"\nInvalid input: {choice}. Enter 1, 2, or 3.\n" +
+                          Style.RESET_ALL)
                     continue
 
 
@@ -570,16 +591,15 @@ def main():
             print("Thanks for checking it out!\n")
             print("Come back soon!\n")
             print(Style.RESET_ALL)
-            exit()  
+            exit()
         else:
             raise ValueError
     except ValueError:
         print(Fore.RED + Style.BRIGHT +
-            f"\nInvalid input: {choice}")
+              f"\nInvalid input: {choice}")
         print(
             "Return to the main menu and enter a number from 1 to 7.\n")
         return_to_main()
 
 
 main()
-

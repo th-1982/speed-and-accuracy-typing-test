@@ -70,7 +70,7 @@
 
 ## Introduction
 
-The Speed and Accuracy Typing Test is a program designed to allow users to test their typing skills, measure their typing speed and typing accuracy, and save their results to a Google Sheets spreadsheet using the Google Sheets API. It also allows the users to access information such as reading test instructions and tips on improving their skills and score, viewing and accessing old scores, deleting their score sheet, and exiting the program. The program is designed in Python and is run through a terminal window.
+The Speed and Accuracy Typing Test is a program designed to allow users to test their typing skills, measure their typing speed and accuracy, and save their results to a Google Sheets spreadsheet using the Google Sheets API. It also allows the users to access information such as reading test instructions and tips on improving their skills and score, viewing and accessing old scores, deleting their score sheet, and exiting the program. The program is designed in Python and is run through a terminal window.
 
 
 ## Project Goals
@@ -165,7 +165,7 @@ The background picture has white and black shades contrasting the background and
 
 The button above the terminal window is a spring green color so that it lifts out from the page and calls for action.
 
-The application uses the Colorama library to add color to the terminal output, making it more visually appealing and user-friendly. The text in the terminal window is colored depending on the type of information displayed or the action called for. Menu options are generally expressed in plain white text. The main welcome message and headers are displayed in Yellow. The blue color is used for showing instructions and tips. Magenta is used for expressing exit messages. Green is used for displaying prompts and user input instructions. Errors messages and invalid input are displayed in red. The colors are defined using the ´Fore´ class from the ´Colorama´ library, combined with the ´Style. BRIGHT´ attribute to make the text more prominent. For example, ´Fore.YELLOW + Style.BRIGHT´ sets the text color to yellow and makes it bright.
+The application uses the Colorama library to add color to the terminal output, making it more visually appealing and user-friendly. The text in the terminal window is colored depending on the type of information displayed or the action called for. Menu options are generally expressed in plain white text. The main welcome message and headers are displayed in Yellow. The blue color is used for showing instructions and tips. Magenta is used for expressing exit messages. The Cyan color is used for displaying difficulty levels. Green is used for displaying prompts and user input instructions. Errors messages and invalid input are shown in red. The colors are defined using the ´Fore´ class from the ´Colorama´ library, combined with the ´Style. BRIGHT´ attribute to make the text more prominent. For example, ´Fore.YELLOW + Style.BRIGHT´ sets the text color to yellow and makes it bright.
 
 #### Font
 
@@ -278,7 +278,7 @@ The following site was helpful while developing the code to help with problem-so
 
 * No errors were found when testing the Python code from run.py in the PEP8 CI Python Linter.
 
-![Python Testing](docs/testing.md/cipythonlinter.jpg)
+![Python Testing](docs/testing.md/)
 
 ### HTML
 
