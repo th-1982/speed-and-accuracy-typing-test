@@ -429,7 +429,7 @@ The website was deployed on Heroku. The following steps were followed for a comp
 14. In the list of Buildpacks, Python needs to be listed above nodejs; if not, drag the buildpacks into the correct order.
 15. This concluded the 'Settings' of the project.
 16. Next, the 'Deploy' section was accessed by clicking on the 'Deploy' tab.
-17. In the 'Deploy' section, GitHub was selected, and then the project on GitHub was searched for; it has the name 'portfolio-project-3'. 
+17. In the 'Deploy' section, GitHub was selected, and then the project on GitHub was searched for; it has the name 'speed-and-accuracy-typing-test'. 
 18. The project was then connected to Heroku by clicking 'connect.'
 19. Next, 'Enable Automatic Deploys' was selected so that the app would be updated automatically every time changes are pushed to GitHub.
 20. Then, 'Deploy Branch' was clicked, and the app was built.
