@@ -125,13 +125,10 @@ def tips():
     """
     Print on how to improve speed and accuracy typing test
     """
-    print(Fore.BLUE + Style.BRIGHT + "How can you improve in speed and\
-    accuracy typing test?\n")
+    print(Fore.BLUE + Style.BRIGHT + "How can you improve in speed and accuracy typing test?\n")
     print(Style.RESET_ALL)
-    print(Fore.BLUE + Style.BRIGHT + "* Familiarize yourself with proper\
-    keyboard.\n")
-    print("* Learn proper overall positioning of the screen, your finger and\
-    your body.\n")
+    print(Fore.BLUE + Style.BRIGHT + "* Familiarize yourself with proper keyboard.\n")
+    print("* Learn proper overall positioning of the screen, your finger and your body.\n")
     print("* Keep your eyes on the screen.\n")
     print("* Practice regularly.\n")
     print("* Take online type test on the internet. \n")
@@ -145,8 +142,7 @@ def choose_levels():
     """
     This function prompts the user to choose a level
     """
-    print(Fore.CYAN + Style.BRIGHT + """Select the number for the\
-    corresponding level
+    print(Fore.CYAN + Style.BRIGHT + """Select the number for the corresponding level
 1) Beginner
 2) Intermediate
 3) Advanced
@@ -362,8 +358,7 @@ def see_old_scores_and_statistics():
     while True:
         try:
             print(
-                Fore.GREEN + Style.BRIGHT + "Enter your username to see your\
-                scores and statistics:\n")
+                Fore.GREEN + Style.BRIGHT + "Enter your username to see your scores and statistics:\n")
             print(Style.RESET_ALL)
             usrnm = input().lower()
             user_scsht = SHEET.worksheet(usrnm)
@@ -451,8 +446,7 @@ def create_user_score_sheet():
             )
             print("Do you want to:\n")
             print("1. Choose a differnt username?\n")
-            print("2. Return to main menu and record data to existing\
-            sheet?\n")
+            print("2. Return to main menu and record data to existing sheet?\n")
             print(Fore.GREEN + Style.BRIGHT + "Enter your numeric choice:\n" +
                   Style.RESET_ALL)
             choice = input()
