@@ -125,7 +125,7 @@ def tips():
     """
     Print on how to improve speed and accuracy typing test
     """
-    print(Fore.MAGENTA + Style.BRIGHT + "How can you improve in speed and\
+    print(Fore.BLUE + Style.BRIGHT + "How can you improve in speed and\
     accuracy typing test?\n")
     print(Style.RESET_ALL)
     print(Fore.BLUE + Style.BRIGHT + "* Familiarize yourself with proper\
