@@ -278,7 +278,7 @@ The following site was helpful while developing the code to help with problem-so
 
 * No errors were found when testing the Python code from run.py in the PEP8 CI Python Linter.
 
-![Python Testing](docs/testing.md/)
+![Python Testing](docs/testing.md/cipythonlinter.jpg)
 
 ### HTML
 
